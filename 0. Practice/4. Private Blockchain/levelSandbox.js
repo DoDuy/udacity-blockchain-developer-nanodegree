@@ -1,54 +1,71 @@
-/* ===== Persist data with LevelDB ===================================
-|  Learn more: level: https://github.com/Level/level     |
-|  =============================================================*/
-
-let level = require('level');
-let chainDB = './chaindata';
-let db = level(chainDB);
-
-// Add data to levelDB with key/value pair
-function addLevelDBData(key,value){
-  db.put(key, value, function(err) {
-    if (err) return console.log('Block ' + key + ' submission failed', err);
-  })
-}
-
-// Get data from levelDB with key
-function getLevelDBData(key){
-  db.get(key, function(err, value) {
-    if (err) return console.log('Not found!', err);
-    console.log('Value = ' + value);
-  })
-}
-
-// Add data to levelDB with value
-function addDataToLevelDB(value) {
-    let i = 0;
-    db.createReadStream().on('data', function(data) {
-          i++;
-        }).on('error', function(err) {
-            return console.log('Unable to read data stream!', err)
-        }).on('close', function() {
-          console.log('Block #' + i);
-          addLevelDBData(i, value);
+/* ===== Persist data with LevelDB ==================
+|  Learn more: level: https://github.com/Level/level |
+/===================================================*/
+// Importing the module 'level'
+const level = require('level');
+// Declaring the folder path that store the data
+const chainDB = './chaindata';
+// Declaring a class
+class LevelSandbox {
+  // Declaring the class constructor
+    constructor() {
+      this.db = level(chainDB);
+    }
+  
+    // Get data from levelDB with key (Promise)
+    getLevelDBData(key){
+        let self = this; // because we are returning a promise we will need this to be able to reference 'this' inside the Promise constructor
+        return new Promise(function(resolve, reject) {
+            self.db.get(key, (err, value) => {
+                if(err){
+                    if (err.type == 'NotFoundError') {
+                        resolve(undefined);
+                    }else {
+                        console.log('Block ' + key + ' get failed', err);
+                        reject(err);
+                    }
+                }else {
+                    resolve(value);
+                }
+            });
         });
+    }
+  
+    // Add data to levelDB with key and value (Promise)
+    addLevelDBData(key, value) {
+        let self = this;
+        return new Promise(function(resolve, reject) {
+            self.db.put(key, value, function(err) {
+                if (err) {
+                    console.log('Block ' + key + ' submission failed', err);
+                    reject(err);
+                }
+                resolve(value);
+            });
+        });
+    }
+  
+    /**
+     * Step 2. Implement the getBlocksCount() method
+     */
+    getBlocksCount() {
+        let self = this;
+        var count = 0;
+        // Add your code here
+        return new Promise(function(resolve, reject){
+          self.db.createReadStream()
+          .on('data', function(data){
+            count ++;
+          })
+          .on('error', function(err){
+            reject(err);
+          })
+          .on('close', function(){
+            resolve(count);
+          })
+        })
+      }
 }
 
-/* ===== Testing ==============================================================|
-|  - Self-invoking function to add blocks to chain                             |
-|  - Learn more:                                                               |
-|   https://scottiestech.info/2014/07/01/javascript-fun-looping-with-a-delay/  |
-|                                                                              |
-|  * 100 Milliseconds loop = 36,000 blocks per hour                            |
-|     (13.89 hours for 500,000 blocks)                                         |
-|    Bitcoin blockchain adds 8640 blocks per day                               |
-|     ( new block every 10 minutes )                                           |
-|  ===========================================================================*/
-
-
-(function theLoop (i) {
-  setTimeout(function () {
-    addDataToLevelDB('Testing data');
-    if (--i) theLoop(i);
-  }, 100);
-})(10);
+// Export the class
+module.exports.LevelSandbox = LevelSandbox;
