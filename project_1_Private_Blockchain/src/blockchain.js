@@ -74,7 +74,14 @@ class Blockchain {
 
            self.chain.push(block);
            self.height++;
-           resolve(block);
+           self.validateChain()
+           .then(errorLog => {
+                if (errorLog.length > 0){
+                    reject(new Error("The blockchain is invalid!"));
+                } else {
+                    resolve(block);
+                }
+           })
         });
     }
 
@@ -214,15 +221,26 @@ class Blockchain {
         let self = this;
         let errorLog = [];
         return new Promise(async (resolve, reject) => {
-            self.chain.forEach(block => {
-                if (!block.validate()){
-                    errorLog.push(new Error(`Invalid block ${block.height}`));
-                }
+            let validPromises = [];
+            self.chain.map(block => {
+                validPromises.push(block.validate())
+
                 if (block.height > 0 && block.previousBlockHash !== self.chain[block.height - 1].hash){
                     errorLog.push(new Error(`Blocks ${block.height-1} and ${block.height} are disconnected!`));
                 }
-                resolve(errorLog);
             });
+            Promise.all(validPromises)
+            .then(valids => {
+                valids.forEach((valid, idx) => {
+                    if (!valid) {
+                        errorLog.push(new Error(`Invalid block ${block.height}`));
+                    }
+                })
+                resolve(errorLog);
+            })
+            .catch(errors => {
+                reject(errors);
+            })
         });
     }
 

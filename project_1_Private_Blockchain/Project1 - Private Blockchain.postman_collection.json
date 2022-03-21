@@ -52,7 +52,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/block/hash/4671237daa94371641629329af10d282a72f2a35d215a24393212c1e567abf30",
+					"raw": "http://localhost:8000/block/hash/a186866241e920fa9bf3acea647ed7792df2fdd192f7ad0f483cdd1cfbea8cc8",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -61,7 +61,26 @@
 					"path": [
 						"block",
 						"hash",
-						"4671237daa94371641629329af10d282a72f2a35d215a24393212c1e567abf30"
+						"a186866241e920fa9bf3acea647ed7792df2fdd192f7ad0f483cdd1cfbea8cc8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step6. validateChain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/validateChain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"validateChain"
 					]
 				}
 			},
@@ -109,7 +128,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"address\": \"mgymuvv82uaDPSxunJ9T3VvEXM5X4H84A4\",\n    \"signature\": \"HxyFeqktW3aFs7mge4pgaMtP0mHDIX1hhudklGnQT3iXRShlj+Whc0SQDQ+4JZE0f6xyJIGsZtK8WoroCTYs4a8=\",\n    \"message\": \"mgymuvv82uaDPSxunJ9T3VvEXM5X4H84A4:1647848116:starRegistry\",\n    \"star\": {\n        \"dec\": \"68o 52' 56.9\",\n        \"ra\": \"16h 29m 1.0s\",\n        \"story\": \"Testing the story\"\n    }\n}",
+					"raw": "{\n    \"address\": \"mgymuvv82uaDPSxunJ9T3VvEXM5X4H84A4\",\n    \"signature\": \"IBxqc+f5D4gcxSt+8j2GNOcIwzjHMfDCc4Y9NcNNnzNpCiLm5TqXIKLrH8yCPSdkafdo/KFt0buAB+oc93wLFfQ=\",\n    \"message\": \"mgymuvv82uaDPSxunJ9T3VvEXM5X4H84A4:1647850773:starRegistry\",\n    \"star\": {\n        \"dec\": \"68o 52' 56.9\",\n        \"ra\": \"16h 29m 1.0s\",\n        \"story\": \"Testing the story\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
