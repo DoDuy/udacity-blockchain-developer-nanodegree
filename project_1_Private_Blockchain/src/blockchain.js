@@ -233,7 +233,7 @@ class Blockchain {
             .then(valids => {
                 valids.forEach((valid, idx) => {
                     if (!valid) {
-                        errorLog.push(new Error(`Invalid block ${block.height}`));
+                        errorLog.push(new Error(`Invalid block ${idx}`));
                     }
                 })
                 resolve(errorLog);
