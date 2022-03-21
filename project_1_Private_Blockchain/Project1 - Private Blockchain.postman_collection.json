@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "ad33c945-4c2f-44ae-a55f-b0e9e7d5a3eb",
+		"name": "Project1 - Private Blockchain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Step1. get block by height",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/block/height/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"block",
+						"height",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step4. get StarsByOwner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/blocks/mgymuvv82uaDPSxunJ9T3VvEXM5X4H84A4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"blocks",
+						"mgymuvv82uaDPSxunJ9T3VvEXM5X4H84A4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step5. get block by hash",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/block/hash/4671237daa94371641629329af10d282a72f2a35d215a24393212c1e567abf30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"block",
+						"hash",
+						"4671237daa94371641629329af10d282a72f2a35d215a24393212c1e567abf30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step2. requestValidation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"address\": \"mgymuvv82uaDPSxunJ9T3VvEXM5X4H84A4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/requestValidation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"requestValidation"
+					],
+					"query": [
+						{
+							"key": "data",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step3. submitstar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"address\": \"mgymuvv82uaDPSxunJ9T3VvEXM5X4H84A4\",\n    \"signature\": \"HxyFeqktW3aFs7mge4pgaMtP0mHDIX1hhudklGnQT3iXRShlj+Whc0SQDQ+4JZE0f6xyJIGsZtK8WoroCTYs4a8=\",\n    \"message\": \"mgymuvv82uaDPSxunJ9T3VvEXM5X4H84A4:1647848116:starRegistry\",\n    \"star\": {\n        \"dec\": \"68o 52' 56.9\",\n        \"ra\": \"16h 29m 1.0s\",\n        \"story\": \"Testing the story\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/submitstar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"submitstar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
