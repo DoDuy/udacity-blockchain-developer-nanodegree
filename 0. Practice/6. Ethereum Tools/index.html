@@ -7,15 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Deploy a Remix Contract</title>
 
-    <!-- <link rel="stylesheet" type="text/css" href="main.css"> -->
+    <link rel="stylesheet" type="text/css" href="main.css">
 
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
 </head>
 
 <body>
     <div>
-        <h1>Deploy a Remix Contract</h1>
+        <h1>Ethereum Secret Messenger</h1>
+        <hr>
+
+        <label for="message">This site writes a secret message to the Ethereum
+            blockchain!</label>
+        <input id="userInput" type="text">
+
+        <button id="setMessageButton">Set secret message</button>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
     <script>
 
@@ -23,11 +32,17 @@
         if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
         } else {
-            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+            web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/v3/95a68d8f3b0a4d24a5e225a6e9e88253"));
         }
 
         // Set a default account
-        web3.eth.defaultAccount = web3.eth.accounts[0];
+        // web3.eth.defaultAccount = web3.eth.accounts[0];
+        var accounts = [];
+        web3.eth.getAccounts().then(wls => {
+            accounts = wls;
+            if (accounts.length == 0) accounts = ["0x2f0F5fFF26e3407F2B423F3Ee9651ceD3593a8BF"]
+            console.log(accounts)
+        });
 
         // Get the contract address
         var myMessage = new web3.eth.Contract([
@@ -59,12 +74,17 @@
                 "stateMutability": "view",
                 "type": "function"
             }
-        ], '0x241d32183028F9754bAc2CE792800Cb91AAd22e2');
+        ], '0x4Df7d595d77cfA01181da952FCb4c2684a86867f');
 
         // Get the contract abi
         // var myMessage = RemixContract.at('0x241d32183028F9754bAc2CE792800Cb91AAd22e2');
 
         console.log(myMessage);
+
+        $("#setMessageButton").click(function () {
+            myMessage.methods.setMessage($("#userInput").val()).send({from: accounts[0]});
+            console.log($("#userInput").val())
+        });
 
     </script>
 </body>
