@@ -12,4 +12,4 @@
 ```
 0x2DE61F9AA2C87544B191C3C926f501C25489486C
 ```
-see contract on (etherscan)[https://rinkeby.etherscan.io/address/0x2DE61F9AA2C87544B191C3C926f501C25489486C]
+see contract on [etherscan](https://rinkeby.etherscan.io/address/0x2DE61F9AA2C87544B191C3C926f501C25489486C)
