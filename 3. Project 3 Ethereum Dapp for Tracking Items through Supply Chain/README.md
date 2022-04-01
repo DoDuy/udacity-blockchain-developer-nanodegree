@@ -3,10 +3,10 @@ For this project, I created a DApp supply chain solution backed by the Ethereum 
 
 ## 1: Plan the project with write-ups
 ### Project write-up - UML
-![ActivityDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/ActivityDiagram.png)
-![SequenceDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/SequenceDiagram.png)
-![StateDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/StateDiagram.png)
-![ClassDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/ClassDiagram.png)
+![ActivityDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/ActivityDiagram.jpeg)
+![SequenceDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/SequenceDiagram.jpeg)
+![StateDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/StateDiagram.jpeg)
+![ClassDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/ClassDiagram.jpeg)
 
 ### Project write-up - Libraries
 Library|Version|purpose
@@ -31,6 +31,21 @@ The final web UI is attached as below:
 
 All tests are approved without error:
 ![test](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/test.png)
+Transaction history:
+```
+* FarmerAdded - 0xc3a5c7de37cdd77d7d0664da7c77648d8aa2ef075aa66f0fd9bfbbed151a000a
+* DistributorAdded - 0xc41479cbaf096f42ca1c85a5161c287412d7f6112b8206a79962c2930b7177ef
+* RetailerAdded - 0xd40eb95092d2d782b49dce023ebb35d9d13b4265210e0a432430fa3144c321a5
+* ConsumerAdded - 0x53e24680b8818727a72b63a23551659f2b4b67f76706a3faff44bbc21e3abe69
+* Harvested - 0x3d1c3b1b31211e29ef022a580db63572c23e9e308dee9da1a014a77a7ebf98e1
+* Processed - 0x8248ae72903c604f01d4361d8d7261fadb2fa7e7d58daa61d7328ff7a00129be
+* Packed - 0xac3978c601ad85d9037c021331d2fe4069343a9d68d6ef9c6f68aec59346d52b
+* ForSale - 0x913ffccc83d5ff56539123dfdc1de66fe7b1937cb416ad70573b7db0709568cc
+* Sold - 0xdc0473bd9fbf80d5ad9b1f9dda468a0930877456ae84a1edd6cc79026d3f6879
+* Shipped - 0xd7376c8550e035987027a898532fb88c3e8e857922978f449f4b38d1b74b4038
+* Received - 0xe2d89c66eaaf2b4a157ac179c205b9b706c51b0cca8feea3b0e130b522641f3f
+* Purchased - 0x88e8541436b7c2b3d03e9d3488e065b50e679d865cb26bf462312b6c226037c8
+```
 
  ## 2: Deploy smart contract on a public test network (Rinkeby)
 Name|Contract|Transaction
