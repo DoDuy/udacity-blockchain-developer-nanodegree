@@ -3,6 +3,11 @@ For this project, I created a DApp supply chain solution backed by the Ethereum 
 
 ## 1: Plan the project with write-ups
 ### Project write-up - UML
+![ActivityDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/ActivityDiagram.png)
+![SequenceDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/SequenceDiagram.png)
+![StateDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/StateDiagram.png)
+![ClassDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/ClassDiagram.png)
+
 ### Project write-up - Libraries
 Library|Version|purpose
 ---|---|---
@@ -19,13 +24,19 @@ In this project, I have completed all the missing codes, tested as well as run t
 I tested this project with all the steps on the local network because on the rinkeby test network I have very little ETH because it is difficult to request a lot of ETH, but I also successfully deployed the smart contract to the rinkeby test network.
 Also in the web UI I have added a section to help add new users to make demo easier.
 The final web UI is attached as below:
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/UI1.png)
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/UI2.png)
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/UI3.png)
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/UI4.png)
 
 All tests are approved without error:
+![test](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/test.png)
+
  ## 2: Deploy smart contract on a public test network (Rinkeby)
 Name|Contract|Transaction
 ---|---|---
-FarmerRole|0x8Aa01c0b3013a190d76614Cbf0eCb33B56AF91FC|0x14041f8fd8ede84fdde4726ddab2f9a3989906fe2ba30df0f598fd007648e2ad
-DistributorRole|0xE53A0f1B9c45E08A424642C4e5Ebf1741bc3093e|0xd98a5e06a10943e618eafe4adeea99e63e30ba863fac2c9fec9ca035b3e896e2
-RetailerRole|0xD44b2102c3C0224F8392B83b0e154dD2b1fa33A9|0x5cac0609ac0da7828d3a936a2398161f3e72766fb0c2748177d9495c1e631706
-ConsumerRole|0x35002B7B8657f517299b829808fAc4cf31efED37|0x450197a609a44138673a92454c8ffae29b8f4c6bde9f871fce87d8f6f28c5683
-SupplyChain|0xb51823a43C3FE2C5af020e4DcEd9c3Eca2347E02|0xf0987b983cc091f8ebb5af718abad0924679c34e7656a4d0aa4f3e55e710c2c6
+FarmerRole|[0x8Aa01c0b3013a190d76614Cbf0eCb33B56AF91FC](https://rinkeby.etherscan.io/address/0x8Aa01c0b3013a190d76614Cbf0eCb33B56AF91FC)|[0x14041f8fd8ede84fdde4726ddab2f9a3989906fe2ba30df0f598fd007648e2ad](https://rinkeby.etherscan.io/tx/0x14041f8fd8ede84fdde4726ddab2f9a3989906fe2ba30df0f598fd007648e2ad)
+DistributorRole|[0xE53A0f1B9c45E08A424642C4e5Ebf1741bc3093e](https://rinkeby.etherscan.io/address/0xE53A0f1B9c45E08A424642C4e5Ebf1741bc3093e)|[0xd98a5e06a10943e618eafe4adeea99e63e30ba863fac2c9fec9ca035b3e896e2](https://rinkeby.etherscan.io/tx/0xd98a5e06a10943e618eafe4adeea99e63e30ba863fac2c9fec9ca035b3e896e2)
+RetailerRole|[0xD44b2102c3C0224F8392B83b0e154dD2b1fa33A9](https://rinkeby.etherscan.io/address/0xD44b2102c3C0224F8392B83b0e154dD2b1fa33A9)|[0x5cac0609ac0da7828d3a936a2398161f3e72766fb0c2748177d9495c1e631706](https://rinkeby.etherscan.io/tx/0x5cac0609ac0da7828d3a936a2398161f3e72766fb0c2748177d9495c1e631706)
+ConsumerRole|[0x35002B7B8657f517299b829808fAc4cf31efED37](https://rinkeby.etherscan.io/address/0x35002B7B8657f517299b829808fAc4cf31efED37)|[0x450197a609a44138673a92454c8ffae29b8f4c6bde9f871fce87d8f6f28c5683](https://rinkeby.etherscan.io/tx/0x450197a609a44138673a92454c8ffae29b8f4c6bde9f871fce87d8f6f28c5683)
+SupplyChain|[0xb51823a43C3FE2C5af020e4DcEd9c3Eca2347E02](https://rinkeby.etherscan.io/address/0xb51823a43C3FE2C5af020e4DcEd9c3Eca2347E02)|[0xf0987b983cc091f8ebb5af718abad0924679c34e7656a4d0aa4f3e55e710c2c6](https://rinkeby.etherscan.io/tx/0xf0987b983cc091f8ebb5af718abad0924679c34e7656a4d0aa4f3e55e710c2c6)
