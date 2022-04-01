@@ -19,7 +19,7 @@ Node version|16.14.1|run Dapp website
 - Distributor: The Distributor can buy coffee palettes and track authenticity.
 - Retailer: The Retailer can receive coffee palettes and track authenticity.
 - Consumer: The consumer can buy coffee palettes and track authenticity.
-### General Write Up
+## 2. Development - General Write Up
 In this project, I have completed all the missing codes, tested as well as run the whole project.
 I tested this project with all the steps on the local network because on the rinkeby test network I have very little ETH because it is difficult to request a lot of ETH, but I also successfully deployed the smart contract to the rinkeby test network.
 Also in the web UI I have added a section to help add new users to make demo easier.
@@ -47,7 +47,7 @@ Transaction history:
 All tests are approved without error:
 ![test](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/test.png)
 
- ## 2: Deploy smart contract on a public test network (Rinkeby)
+ ## 3: Deploy smart contract on a public test network (Rinkeby)
 Name|Contract|Transaction
 ---|---|---
 FarmerRole|[0x8Aa01c0b3013a190d76614Cbf0eCb33B56AF91FC](https://rinkeby.etherscan.io/address/0x8Aa01c0b3013a190d76614Cbf0eCb33B56AF91FC)|[0x14041f8fd8ede84fdde4726ddab2f9a3989906fe2ba30df0f598fd007648e2ad](https://rinkeby.etherscan.io/tx/0x14041f8fd8ede84fdde4726ddab2f9a3989906fe2ba30df0f598fd007648e2ad)
