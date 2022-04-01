@@ -3,10 +3,10 @@ For this project, I created a DApp supply chain solution backed by the Ethereum 
 
 ## 1: Plan the project with write-ups
 ### Project write-up - UML
-![ActivityDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/ActivityDiagram.jpeg)
-![SequenceDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/SequenceDiagram.jpeg)
-![StateDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/StateDiagram.jpeg)
-![ClassDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/ClassDiagram.jpeg)
+![ActivityDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/ActivityDiagram.png)
+![SequenceDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/SequenceDiagram.png)
+![StateDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/StateDiagram.png)
+![ClassDiagram](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/UML/ClassDiagram.png)
 
 ### Project write-up - Libraries
 Library|Version|purpose
@@ -24,13 +24,10 @@ In this project, I have completed all the missing codes, tested as well as run t
 I tested this project with all the steps on the local network because on the rinkeby test network I have very little ETH because it is difficult to request a lot of ETH, but I also successfully deployed the smart contract to the rinkeby test network.
 Also in the web UI I have added a section to help add new users to make demo easier.
 The final web UI is attached as below:
-![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/UI1.png)
-![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/UI2.png)
-![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/UI3.png)
-![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/UI4.png)
-
-All tests are approved without error:
-![test](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/test.png)
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/UI1.jpeg)
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/UI2.jpeg)
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/UI3.jpeg)
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/UI4.jpeg)
 Transaction history:
 ```
 * FarmerAdded - 0xc3a5c7de37cdd77d7d0664da7c77648d8aa2ef075aa66f0fd9bfbbed151a000a
@@ -46,6 +43,9 @@ Transaction history:
 * Received - 0xe2d89c66eaaf2b4a157ac179c205b9b706c51b0cca8feea3b0e130b522641f3f
 * Purchased - 0x88e8541436b7c2b3d03e9d3488e065b50e679d865cb26bf462312b6c226037c8
 ```
+
+All tests are approved without error:
+![test](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/3.%20Project%203%20Ethereum%20Dapp%20for%20Tracking%20Items%20through%20Supply%20Chain/images/test.png)
 
  ## 2: Deploy smart contract on a public test network (Rinkeby)
 Name|Contract|Transaction
