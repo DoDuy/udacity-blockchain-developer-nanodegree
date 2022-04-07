@@ -30,7 +30,23 @@ section {
 }
 
 .field-value {
-    color: #0e7fa8;
+    font-weight: bold;
+    color: #060606;
+}
+
+.field-value-fail {
+    font-weight: bold;
+    color: #a80e4e;
+}
+
+.field-value-success {
+    font-weight: bold;
+    color: #00fd00;
+}
+
+.field-value-note {
+    font-weight: bold;
+    color: #fdb500;
 }
 
 label.form {

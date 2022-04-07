@@ -4,8 +4,9 @@ const fs = require('fs');
 
 module.exports = function(deployer) {
 
-    let firstAirline = '0xeb4673a1c37b9e767afad663b6f39db7cfc94e0d';
-    deployer.deploy(FlightSuretyData, firstAirline)
+    let firstAirline = '0x8Bf8c98176250Fe29721dA7f79e7a4Db7A97eF6a';
+    let firstAirlineName = 'Udacity Airline';
+    deployer.deploy(FlightSuretyData, firstAirline, firstAirlineName)
     .then(() => {
         return deployer.deploy(FlightSuretyApp, FlightSuretyData.address)
                 .then(() => {

@@ -22,8 +22,9 @@ var Config = async function(accounts) {
 
     let owner = accounts[0];
     let firstAirline = accounts[1];
+    let firstAirlineName = "Udacity Airline";
 
-    let flightSuretyData = await FlightSuretyData.new(firstAirline);
+    let flightSuretyData = await FlightSuretyData.new(firstAirline, firstAirlineName);
     let flightSuretyApp = await FlightSuretyApp.new(flightSuretyData.address);
 
     

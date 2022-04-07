@@ -20,12 +20,111 @@
     </nav>
 
     <main class="container">
+        <section class="top-20">
+            <h1>General</h1>
+            <div class="card bg-primary">
+                <div class="card-body">
+                    <div id="display-wrapper" class="top-20">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="top-20">
+            <h1>Airline</h1>
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <h2 class="card-title">Register new Airline</h2>
+                        <hr />
+                        <label>Airline Address:</label>
+                        <input type="text" id="airline-address" placeholder="0x9e1a893dFCb05A17AD66c2f5ad0342dcBd5c20c9">
+                        <label>Airline Name:</label>
+                        <input type="text" id="airline-name" placeholder="Udacity Airline">
+                        <button class="btn btn-success" id="register-airline">Register <i data-feather="plus-square"></i></button>
+                    </div>
+                </div>
 
-        <div id="display-wrapper" class="top-20">
-        </div>
-        <div class="row top-20">
-            <label class="form">Flight</label> <input type="text" id="flight-number"> <btn class="btn btn-primary" id="submit-oracle">Submit to Oracles</btn>
-        </div>
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <h2 class="card-title">Registered Airline Fund</h2>
+                        <hr />
+                        <label class="form">Amount (eth):</label>
+                        <input type="number" id="funding-amount" placeholder="10">
+                        <button class="btn btn-success" id="fund-airline">Fund <i data-feather="dollar-sign"></i></button>
+                    </div>
+                </div>
+
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <h2 class="card-title">Register new Flight</h2>
+                        <hr />
+                        <label>Flight Code:</label>
+                        <input type="text" id="flight-number" placeholder="VN-889">
+                        <button class="btn btn-success" id="register-flight">Register <i data-feather="send"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="top-20">
+            <h1>Passenger</h1>
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <h2 class="card-title">Buy Insurance</h2>
+                        <hr />
+                        <label>Airline address:</label>
+                        <input type="text" id="buyInsurance-adress" placeholder="0x9e1a893dFCb05A17AD66c2f5ad0342dcBd5c20c9">
+                        <br />
+                        <label>Flight code:</label>
+                        <input type="text" id="buyInsurance-code" placeholder="VN-889">
+                        <br />
+                        <label>Timestamp:</label>
+                        <input type="number" id="buyInsurance-timestamp" placeholder="1649324042">
+                        <br />
+                        <label>Amount (eth):</label>
+                        <input type="number" id="buyInsurance-amount" placeholder="0.5">
+                        <br />
+                        <button class="btn btn-success" id="buyInsurance">buy <i data-feather="dollar-sign"></i></button>
+                    </div>
+                </div>
+
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <h2 class="card-title">Fetch Flight Status</h2>
+                        <hr />
+                        <label>Airline address:</label>
+                        <input type="text" id="fetchFlightStatus-adress" placeholder="0x9e1a893dFCb05A17AD66c2f5ad0342dcBd5c20c9">
+                        <br />
+                        <label">Flight code:</label>
+                        <input type="text" id="fetchFlightStatus-code" placeholder="VN-889">
+                        <br />
+                        <label>Timestamp:</label>
+                        <input type="number" id="fetchFlightStatus-timestamp" placeholder="1649324042">
+                        <br />
+                        <btn class="btn btn-success" id="submit-oracle">Submit to Oracles</btn>
+                    </div>
+                </div>
+
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <h2 class="card-title">Withdrawable Funds</h2>
+                        <hr />
+                        <button class="btn btn-warning" id="refresh-funds">Get Withdrawable Funds <i data-feather="refresh-cw"></i></button>
+                        <button class="btn btn-success" id="withdraw-funds">Withdraw <i data-feather="dollar-sign"></i></button>
+                    </div>
+                </div>
+                
+        </section>
+
+        <section class="top-20">
+            <h1>Logs</h1>
+            <div class="card bg-primary">
+                <div class="card-body">
+                    <div id="display-log" class="top-20">
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
 </body>

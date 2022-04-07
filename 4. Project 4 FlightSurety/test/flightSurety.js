@@ -83,10 +83,11 @@ contract('Flight Surety Tests', async (accounts) => {
     
     // ARRANGE
     let newAirline = accounts[2];
+    let newAirlineName = "New Airline";
 
     // ACT
     try {
-        await config.flightSuretyApp.registerAirline(newAirline, {from: config.firstAirline});
+        await config.flightSuretyApp.registerAirline(newAirline, newAirlineName, {from: config.firstAirline});
     }
     catch(e) {
 
@@ -104,10 +105,11 @@ contract('Flight Surety Tests', async (accounts) => {
     await config.flightSuretyApp.fundAirline({from: config.firstAirline, value: AIRLINE_MINIMUM_FUND});
     // ARRANGE
     let newAirline = accounts[2];
+    let newAirlineName = "New Airline";
 
     // ACT
     try {
-        await config.flightSuretyApp.registerAirline(newAirline, {from: config.firstAirline});
+        await config.flightSuretyApp.registerAirline(newAirline, newAirlineName, {from: config.firstAirline});
     }
     catch(e) {
 
@@ -126,9 +128,10 @@ contract('Flight Surety Tests', async (accounts) => {
 
     // ACT
     let offset = 10;
+    let newAirlineName = "New Airline";
     try {
       for(let i = 0; i < 4; i++) {
-        await config.flightSuretyApp.registerAirline(accounts[i+offset], {from: config.firstAirline});
+        await config.flightSuretyApp.registerAirline(accounts[i+offset], `newAirlineName ${i+offset}`, {from: config.firstAirline});
         await config.flightSuretyApp.fundAirline({from: accounts[i+offset], value: AIRLINE_MINIMUM_FUND});
       }
     }
@@ -137,7 +140,7 @@ contract('Flight Surety Tests', async (accounts) => {
     let newAirline = accounts[offset+4];
     // ACT
     try {
-        await config.flightSuretyApp.registerAirline(newAirline, {from: config.firstAirline});
+        await config.flightSuretyApp.registerAirline(newAirline, `newAirlineName ${offset+4}`, {from: config.firstAirline});
     }
     catch(e) {}
     let result = await config.flightSuretyData.isRegistered.call(newAirline); 
@@ -147,7 +150,7 @@ contract('Flight Surety Tests', async (accounts) => {
     // ACT
     try {
       for(let i = 0; i < 2; i++) {
-        await config.flightSuretyApp.registerAirline(newAirline, {from: accounts[i+offset]});
+        await config.flightSuretyApp.registerAirline(newAirline, `newAirlineName ${offset+4}`, {from: accounts[i+offset]});
       }
     }
     catch(e) {}

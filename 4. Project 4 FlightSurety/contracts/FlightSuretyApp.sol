@@ -127,7 +127,7 @@ contract FlightSuretyApp {
     * @dev Add an airline to the registration queue
     *
     */   
-    function registerAirline(address account)
+    function registerAirline(address account, string name)
                             external
                             requireIsOperational
                             requireIsActiveAirline
@@ -140,9 +140,9 @@ contract FlightSuretyApp {
         airlineVotes[account].voteCount = airlineVotes[account].voteCount.add(1);
 
         if (flightSuretyData.getAirlineCount() <= MULTIPARTY_MIN_AIRLINES) {
-            flightSuretyData.registerAirline(account, true);
+            flightSuretyData.registerAirline(account, name, true);
         } else if (uint256(1000).mul(airlineVotes[account].voteCount).div(flightSuretyData.getAirlineCount()) >= uint256(10).mul(MULTIPARTY_MIN_PERCENTAGE)) {
-                flightSuretyData.registerAirline(account, true);
+                flightSuretyData.registerAirline(account, name, true);
         } else return (false, airlineVotes[account].voteCount);
         
         return (true, airlineVotes[account].voteCount);
@@ -198,6 +198,10 @@ contract FlightSuretyApp {
     // {
     //     flightSuretyData.creditInsurees(airline, flight, timestamp, INSURANCE_CREDIT_PERCENTAGE);
     // }
+
+    function getPassengerCredit() external view returns(uint256){
+        return flightSuretyData.getPassengerCredit(msg.sender);
+    }
     
 
     /**
@@ -454,7 +458,7 @@ contract FlightSuretyData {
     // General
     function isOperational() public view returns(bool);
     // Airline
-    function registerAirline(address airlineAdress, bool isRegistered) external;
+    function registerAirline(address airlineAdress, string airlineName, bool isRegistered) external;
     function fundAirline(address account, uint256 value) external;
     function isRegistered(address account) external view returns(bool);
     function getFunded(address account) external view returns(uint256);
@@ -464,6 +468,7 @@ contract FlightSuretyData {
     function buyInsurance(address passenger, address airline, string flight, uint256 timestamp, uint256 value) external;
     function getInsurance(address passenger, address airline, string flight, uint256 timestamp) external view returns(uint256);
     function creditInsurees(address airline, string flight, uint256 timestamp, uint256 multiplier_percentage) external;
+    function getPassengerCredit(address passenger) external view returns(uint256);
     function payInsuree(address passenger) external payable;
 
     // Flight

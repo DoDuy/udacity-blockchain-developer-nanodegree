@@ -13,6 +13,7 @@ contract FlightSuretyData {
     bool private operational = true;                                    // Blocks all state changes throughout the contract if false
 
     struct Airline {
+        string name;
         bool isRegistered;
         uint256 funded;
     }
@@ -43,7 +44,7 @@ contract FlightSuretyData {
     /*                                       EVENT DEFINITIONS                                  */
     /********************************************************************************************/
 
-    event AirlineRegistered(address airline, bool isRegistered);
+    event AirlineRegistered(address airline, string name, bool isRegistered);
     event AirlineFunded(address addr, uint256 amount);
     event FlightRegistered(address airline, string flight, uint256 timestamp, uint8 statusCode);
     event BoughtInsurance(address airline, string flight, uint256 timestamp, address passenger, uint256 amount);
@@ -55,17 +56,18 @@ contract FlightSuretyData {
     * @dev Constructor
     *      The deploying account becomes contractOwner
     */
-    constructor(address airlineAdress) 
+    constructor(address airlineAdress, string airlineName) 
                 public 
     {
         contractOwner = msg.sender;
         airlines[airlineAdress] = Airline({
+            name: airlineName,
             isRegistered: true,
             funded: 0
         });
         airlineCount++;
 
-        emit AirlineRegistered(airlineAdress, true);
+        emit AirlineRegistered(airlineAdress, airlineName, true);
     }
 
     /********************************************************************************************/
@@ -146,21 +148,23 @@ contract FlightSuretyData {
     *      Can only be called from FlightSuretyApp contract
     *
     */   
-    function registerAirline(address airlineAdress, bool isRegistered)
+    function registerAirline(address airlineAdress, string airlineName, bool isRegistered)
                             external
                             requireIsOperational
                             requireCallerAuthorized
     {
         require(airlineAdress != address(0), "invalid address");
         require(airlines[airlineAdress].isRegistered != isRegistered, "Airline isRegister status is not changed");
-        airlines[airlineAdress].isRegistered = isRegistered;
         if (isRegistered){
             airlineCount++;
+            airlines[airlineAdress].isRegistered = isRegistered;
+            airlines[airlineAdress].name = airlineName;
         } else {
             airlineCount--;
+            delete airlines[airlineAdress];
         }
 
-        emit AirlineRegistered(airlineAdress, isRegistered);
+        emit AirlineRegistered(airlineAdress, airlineName, isRegistered);
     }
 
     function fundAirline(address account, uint256 value)
@@ -251,6 +255,16 @@ contract FlightSuretyData {
             emit InsureeCredited(passenger, credit);
         }
     }
+
+    function getPassengerCredit(address passenger)
+                                external
+                                view
+                                requireIsOperational
+                                requireCallerAuthorized
+                                returns(uint256)
+    {
+        return passengersFunded[passenger].credit;
+    }
     
 
     /**
@@ -265,6 +279,7 @@ contract FlightSuretyData {
     {
         require(passengersFunded[passenger].credit > 0, "Passenger have no money");
         uint256 credit = passengersFunded[passenger].credit;
+        require(address(this).balance >= credit, "Contract has insufficient funds");
         passengersFunded[passenger].credit = 0;
         passenger.transfer(credit);
 
