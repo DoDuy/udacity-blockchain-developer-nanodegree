@@ -11,8 +11,14 @@ const STATUS_CODE_LATE_AIRLINE = 20;
 const STATUS_CODE_LATE_WEATHER = 30;
 const STATUS_CODE_LATE_TECHNICAL = 40;
 const STATUS_CODE_LATE_OTHER = 50;
-const TEST_ORACLES_COUNT = 20;
+const ALL_STATUS = [STATUS_CODE_UNKNOWN, STATUS_CODE_ON_TIME, STATUS_CODE_LATE_AIRLINE, STATUS_CODE_LATE_WEATHER, STATUS_CODE_LATE_TECHNICAL, STATUS_CODE_LATE_OTHER];
+
+const TEST_ORACLES_COUNT = 25;
 let offet = 10;
+
+Array.prototype.sample = function(){
+  return this[Math.floor(Math.random()*this.length)];
+}
 
 let config = Config['localhost'];
 let web3 = new Web3(new Web3.providers.WebsocketProvider(config.url.replace('http', 'ws')));
@@ -50,6 +56,7 @@ let flightSuretyApp = new web3.eth.Contract(FlightSuretyApp.abi, config.appAddre
     let timestamp = event.returnValues.timestamp;
     console.log(index, airline, flight, timestamp);
   
+    let status_code = ALL_STATUS.sample();
     const accounts = await web3.eth.getAccounts();
     for(let a=1; a<TEST_ORACLES_COUNT; a++) {
       let oracleIndexes = await flightSuretyApp.methods.getMyIndexes().call({from: accounts[a+offet]});
@@ -57,7 +64,7 @@ let flightSuretyApp = new web3.eth.Contract(FlightSuretyApp.abi, config.appAddre
       for(let idx=0;idx<3;idx++) {
         try {
           await flightSuretyApp.methods.submitOracleResponse(oracleIndexes[idx], 
-            airline, flight, timestamp, STATUS_CODE_LATE_AIRLINE).send({from: accounts[a+offet], gas: 3000000});
+            airline, flight, timestamp, status_code).send({from: accounts[a+offet], gas: 3000000});
         }catch(e) {
           // console.log(e);
         }

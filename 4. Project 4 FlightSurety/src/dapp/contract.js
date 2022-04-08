@@ -97,6 +97,15 @@ export default class Contract {
             });
     }
 
+    getFlightStatus(airline, flight, timestamp, callback) {
+        let self = this;
+        self.flightSuretyApp.methods
+            .getFlightStatus(airline, flight, timestamp)
+            .call({ from: self.owner}, (error, result) => {
+                callback(error, result);
+            });
+    }
+
     getPassengerCredit(callback) {
         let self = this;
         self.flightSuretyApp.methods

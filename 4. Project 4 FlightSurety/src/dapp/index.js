@@ -7,6 +7,14 @@ import './flightsurety.css';
 (async() => {
 
     let result = null;
+    const ALL_STATUS = {
+        "0": "STATUS_CODE_UNKNOWN",
+        "10": "STATUS_CODE_ON_TIME",
+        "20": "STATUS_CODE_LATE_AIRLINE",
+        "30": "STATUS_CODE_LATE_WEATHER",
+        "40": "STATUS_CODE_LATE_TECHNICAL",
+        "50": "STATUS_CODE_LATE_OTHER"
+    };
 
     let contract = new Contract('localhost', () => {
         // Read transaction
@@ -61,6 +69,17 @@ import './flightsurety.css';
                 console.log(error)
                 log('Passenger', 'Fetch Flight Status', [ { error: error, result: result, 
                     notes: `sent`}]);
+            });
+        })
+
+        DOM.elid('flight-status').addEventListener('click', () => {
+            let adress = DOM.elid('fetchFlightStatus-adress').value;
+            let code = DOM.elid('fetchFlightStatus-code').value;
+            let timestamp = DOM.elid('fetchFlightStatus-timestamp').value;
+            contract.getFlightStatus(adress, code, timestamp, (error, result) => {
+                console.log(error)
+                console.log(result)
+                log('Passenger', 'Get Flight Status', [ { error: error, notes: `Status: ${ALL_STATUS[String(result)]}`}]);
             });
         })
 

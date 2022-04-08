@@ -77,7 +77,7 @@ contract('Oracles', async (accounts) => {
 
   });
 
-  it('fund passenger when flight late', async () => {
+  it('Pay Insuree - passenger when flight late', async () => {
     
     // ARRANGE
     let flight = 'ND1309'; // Course number
