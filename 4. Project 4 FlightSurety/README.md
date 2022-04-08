@@ -66,10 +66,11 @@ npm run server
     - Buy insurance
 ![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI7.png)
     - Fetch Flight Status
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI9.png)
     - Wait about 10 seconds then Check Flight Status (Note: because of random status respond from oracles so try `Fetch Flight Status` again until Flight Stuatus is `STATUS_CODE_LATE_AIRLINE`)
 ![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI8.png)
     - Check and Withdrawable Funds 
-![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI9.png)
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI7.5.png)
 ![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI10.png)
 
 ## Deploy smart contract on a public test network (Rinkeby)
