@@ -22,10 +22,10 @@ truffle compile
 truffle test --network ganache
 ```
 Output:
-
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/test.png)
 ### Migration to Ganache
-Edit `firstAirline` in migrations/2_deploy_contracts.js as what address that you want
-Run tuffle migrate:
+Edit `firstAirline` in migrations/2_deploy_contracts.js as what address that you want\
+Run truffle migrate:
 
 ```
 truffle migrate --reset --network ganache
@@ -39,7 +39,8 @@ To view dapp:
 
 `http://localhost:8000`\
 Web UI:
-
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI1.png)
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI2.png)
 
 ### Develop Server
 
@@ -51,18 +52,30 @@ npm run server
 
 - Use 1st Airline address (imported to metamask):
     - Fund 10 ETH to activate your 1st Airline
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI3.png)
     - Add new Airline
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI4.png)
 - Use new added Airline address (imported to metamask):
     - Fund 10 ETH to activate your 2nd Airline
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI3.png)
     - Register new Flight
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI5.png)
     - Log Flight information in Logs section
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI6.png)
 - Use Passenger address (imported to metamask):
     - Buy insurance
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI7.png)
     - Fetch Flight Status
     - Wait about 10 seconds then Check Flight Status (Note: because of random status respond from oracles so try `Fetch Flight Status` again until Flight Stuatus is `STATUS_CODE_LATE_AIRLINE`)
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI8.png)
     - Check and Withdrawable Funds 
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI9.png)
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/4.%20Project%204%20FlightSurety/images/UI10.png)
 
 ## Deploy smart contract on a public test network (Rinkeby)
+```
+truffle migrate --reset --network rinkeby
+```
 Name|Contract|Transaction
 ---|---|---
 FlightSuretyData|[0x82b3c72bdD8282fCb6b2304fF12b29345EA144b0](https://rinkeby.etherscan.io/address/0x82b3c72bdD8282fCb6b2304fF12b29345EA144b0)|[0x9199b18739f294ad60c517ed47ed0eda918f18c83969a6a1855d0c84f668aaa6](https://rinkeby.etherscan.io/tx/0x9199b18739f294ad60c517ed47ed0eda918f18c83969a6a1855d0c84f668aaa6)
