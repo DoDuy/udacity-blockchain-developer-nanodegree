@@ -63,6 +63,7 @@ truffle migrate --reset --network rinkeby
 ```
 ![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/5.%20Capstone%20Real%20Estate%20Marketplace/images/deploy.png)
 - Contract on rinkeby test network
+
 Name|Contract|Transaction
 ---|---|---
 Verifier|[0x5856Ee518C3270C52E2e277eF3F2CCe8B61a0D53](https://rinkeby.etherscan.io/address/0x5856Ee518C3270C52E2e277eF3F2CCe8B61a0D53)|[0x6234c470fa370c8cb310c7a09dff2c0db6026e56772f8549cbb2f18556e54c8a](https://rinkeby.etherscan.io/tx/0x6234c470fa370c8cb310c7a09dff2c0db6026e56772f8549cbb2f18556e54c8a)
