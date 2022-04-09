@@ -5,3 +5,24 @@
 
     
 // Test verification with incorrect proof
+var Verifier = artifacts.require('Verifier');
+const Proof = require("../../zokrates/code/square/proof.json");
+
+contract('Verifier', accounts => {
+
+    describe('Test verification with correct and incorrect proof', function () {
+        beforeEach(async function () { 
+            this.contract = await Verifier.new({from: accounts[0]});
+        })
+
+        it('Test verification with correct proof', async function () { 
+            let isVerify = await this.contract.verifyTx(Proof.proof, Proof.inputs);
+            assert.equal(isVerify, true, "incorrect proof");
+        })
+
+        it('Test verification with incorrect proof', async function () { 
+            let isVerify = await this.contract.verifyTx(Proof.proof, [3, 8]);
+            assert.equal(isVerify, false, "correct proof");
+        })
+    });
+})
