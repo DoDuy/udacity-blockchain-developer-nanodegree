@@ -20,7 +20,6 @@ In this project you will be minting your own tokens to represent your title to t
 Library|Version|purpose
 ---|---|---
 Truffle Version|5.5.6|compile, test, deploy smart contract
-Node version|16.14.1|run Dapp website
 @truffle/hdwallet-provider|2.0.4|provide WalletProvider to support connect truffle with infura
 
 ## Installation and setup
@@ -56,12 +55,14 @@ compile
 migrate
 test
 ```
-- Contract [abi's]()
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/5.%20Capstone%20Real%20Estate%20Marketplace/images/test.png)
+- Contract [abi's](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/tree/main/5.%20Capstone%20Real%20Estate%20Marketplace/eth-contracts/build/contracts)
 - Deploy on rinkeby and mint 10 token
 ```
 truffle migrate --reset --network rinkeby
 ```
-Contract on rinkeby test network
+![](https://github.com/DoDuy/udacity-blockchain-developer-nanodegree/blob/main/5.%20Capstone%20Real%20Estate%20Marketplace/images/deploy.png)
+- Contract on rinkeby test network
 Name|Contract|Transaction
 ---|---|---
 Verifier|[0x5856Ee518C3270C52E2e277eF3F2CCe8B61a0D53](https://rinkeby.etherscan.io/address/0x5856Ee518C3270C52E2e277eF3F2CCe8B61a0D53)|[0x6234c470fa370c8cb310c7a09dff2c0db6026e56772f8549cbb2f18556e54c8a](https://rinkeby.etherscan.io/tx/0x6234c470fa370c8cb310c7a09dff2c0db6026e56772f8549cbb2f18556e54c8a)
