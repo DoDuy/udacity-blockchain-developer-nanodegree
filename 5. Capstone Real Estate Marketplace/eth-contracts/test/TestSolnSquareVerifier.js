@@ -4,13 +4,13 @@
 var SolnSquareVerifier = artifacts.require('SolnSquareVerifier');
 const Proof = require("../../zokrates/code/square/proof.json");
 
-contract('Verifier', accounts => {
+contract('SolnSquareVerifier', accounts => {
     const account_one = accounts[0];
 
     const name = "Real Eastate";
     const symbol = "RE";
 
-    describe('Test verification with correct and incorrect proof', function () {
+    describe('Test SolnSquareVerifier mint a NFT', function () {
         beforeEach(async function () { 
             this.contract = await SolnSquareVerifier.new(name, symbol, {from: accounts[0]});
         })
